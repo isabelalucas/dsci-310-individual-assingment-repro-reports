@@ -2,7 +2,8 @@
 # date: 2021-11-22
 
 # run
-run: bash run.sh
+run:
+	./run.sh
 
 rmd: results/horse_pop_plot_largest_sd.png results/horse_pops_plot.png results/horses_spread.csv doc/rmd_example/rmd_example.html doc/rmd_example/rmd_example.pdf
 
@@ -24,6 +25,6 @@ doc/jbook_example/_build/latex/python.pdf: doc/jbook_example/_config.yml doc/jbo
 
 # clean
 clean:
-    rm -rf results
+	rm -rf results
 	rm -rf doc/rmd_example/rmd_example.html doc/rmd_example/rmd_example.pdf
 	rm -rf doc/jbook_example/_build
