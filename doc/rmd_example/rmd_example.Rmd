@@ -4,11 +4,11 @@ author: "Tiffany Timbers & Jordan Bourak"
 output:
   html_document:
     toc: true
+    toc_depth: 1
   pdf_document:
     toc: true
-  bookdown::html_document2
-  bookdown::pdf_document2
-  bibliography: references.bib  
+    toc_depth: 1
+bibliography: references.bib
 ---
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}
@@ -34,7 +34,7 @@ The R programming language (R Core Team, 2019) and the following R packages were
 # Results
 
 ```{r, horse-pop-fig, echo=FALSE, out.width="50%", fig.cap="A nice image."}
-knitr::include_graphics("../../results/horse_pops_plot.png")
+knitr::include_graphics("../../results/horse_pops_plot.png", error = FALSE)
 ```
 
 Figure \@ref(fig:horse-pop-fig): Horse populations for all provinces in Canada from 1906 - 1972
@@ -46,7 +46,7 @@ Suppose we were interested in looking in more closely at the province with the h
 ```{r, horse-pop-spread, echo=FALSE, out.width="50%", fig.cap="A nice image."}
 horses_sd_table <- read_csv("../../results/horses_sd.csv")
 largest_sd <- horses_sd_table$Province[1]
-knitr::kable(horses_sd_table), caption = "Standard deviation of horse populations across all provinces in Canada from 1906 - 1972"
+knitr::kable(horses_sd_table, caption = "Standard deviation of horse populations across all provinces in Canada from 1906 - 1972")
 ```
 
 Note that we define standard deviation (of a sample) as
@@ -56,7 +56,7 @@ $$s = sqrt( sum_{i = 1}^n(x_i - \bar{x}) / (n-1))$$
 Additionally, note that in Table \@ref(tab:horse-pop-spread) we consider the sample standard deviation of the number of horses during the same time span as Figure \@ref(fig:horse-pop-fig).
 
 ```{r, horse-pop-highest-sd, echo=FALSE, out.width="50%", fig.cap="A nice image."}
-knitr::include_graphics("../../results/horse_pop_plot_largest_sd.png")
+knitr::include_graphics("../../results/horse_pop_plot_largest_sd.png", error = FALSE)
 ```
 
 Figure \@ref(tab:horse-pop-highest-sd): Horse populations for the province with the largest standard deviation
